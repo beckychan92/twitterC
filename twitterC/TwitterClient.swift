@@ -61,12 +61,9 @@ class TwitterClient: BDBOAuth1SessionManager {
         loginFailure = failure
         
         deauthorize()
-//        TwitterClient.sharedInstance?.deauthorize()
-        fetchRequestToken(withPath: "oauth/request_token", method: "GET", callbackURL: NSURL(string: "twitterdemo://oauth") as URL!, scope: nil, success: { (requestToken: BDBOAuth1Credential?) in
+        fetchRequestToken(withPath: "oauth/request_token", method: "GET", callbackURL: NSURL(string: "tweetdemo://oauth") as URL!, scope: nil, success: { (requestToken: BDBOAuth1Credential?) in
             
-        //register extensions
-//        TwitterClient.sharedInstance?.fetchRequestToken(withPath: "oauth/request_token", method: "GET", callbackURL: URL(string: "twitterC://oauth"), scope: nil, success: { (requestToken: BDBOAuth1Credential?) in
-        
+  
             
             
             
@@ -74,6 +71,7 @@ class TwitterClient: BDBOAuth1SessionManager {
             
             //youtube 14:30
             if requestToken != nil {
+                print("hello")
                 let url = NSURL(string: "https://api.twitter.com/oauth/authorize?oauth_token=\((requestToken?.token)!)")!
                 UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
             
@@ -99,16 +97,18 @@ class TwitterClient: BDBOAuth1SessionManager {
     }
     
     
-    func handleOpenUrl(url: NSURL){
+    func handleOpenUrl(url: URL){
         
         let requestToken = BDBOAuth1Credential(queryString: url.query)
-        
+        print("in open handle halleula")
         fetchAccessToken(withPath: "oauth/access_token", method: "POST", requestToken: requestToken, success: {(accessToken: BDBOAuth1Credential? ) in
             
             self.currentAccount(success: { (user: User) -> () in
                 User.currentUser = user
+                print("success")
+
                 self.loginSuccess?()
-                
+
             }, failure: { (error: NSError)  -> () in
                 self.loginFailure?(error)
             })

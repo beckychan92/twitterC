@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TweetsViewController: UIViewController {
+class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     //, UITableViewDelegate, UITableViewDataSource
     
     var tweets: [Tweet] = []
@@ -23,13 +23,15 @@ class TweetsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("in twttier cntrl")
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         TwitterClient.sharedInstance?.homeTimeLine(success: { (tweets: [Tweet]) in
-            self.tweets = tweets
             
-            for tweet in tweets {
-                print(tweet.text!)
-            }
+            self.tweets = tweets
+            print("success!")
+           
             self.tableView.reloadData()
         }, failure: { (error) in
             print(error.localizedDescription)
@@ -40,19 +42,18 @@ class TweetsViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return tweets.count
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Tweet", for: indexPath) as! Tweet
-//        if tweets != nil {
-//            cell.tweet = tweets?[indexPath.row]
-//            cell.selectionStyle = .none
-//        
-//        }
-//        return cell
-//    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("this is tweets")
+        return self.tweets.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Tweet", for: indexPath) as! TweetCell
+        let tweet = self.tweets[indexPath.row]
+        cell.tweet = tweet
+        print("got cell")
+        return cell
+    }
 
     /*
     // MARK: - Navigation

@@ -27,17 +27,18 @@ class TweetCell: UITableViewCell {
     var retweeted = false
     var favorited = false
     
-    var user: User! {
-        didSet{
-            profilephoto.setImageWith(user.profileUrl!)
-            nameLabel.text = user.screenname
-            retweetButtonOutlet.setImage(UIImage (named: "retweet_icon"), for: UIControlState.normal)
-            likeButtonOutlet.setImage(UIImage (named: "like_icon"), for: UIControlState.normal)
-        
-        }
-    }
+//    var user: User! {
+//        didSet{
+//            profilephoto.setImageWith(user.profileUrl!)
+//            nameLabel.text = user.screenname
+//            retweetButtonOutlet.setImage(UIImage (named: "retweet_icon"), for: UIControlState.normal)
+//            likeButtonOutlet.setImage(UIImage (named: "like_icon"), for: UIControlState.normal)
+//        
+//        }
+//    }
     
     var tweet: Tweet! {
+        
         didSet{
             tweetLabel.text = tweet.text
             rCount.text = "\(tweet.retweets_count)"
