@@ -20,7 +20,7 @@ class TwitterClient: BDBOAuth1SessionManager {
     
     
     func homeTimeLine(success: @escaping ([Tweet]) -> (), failure: @escaping (NSError) -> ()){
-        get("1.1/statuses/home_timeline.json", parameters: nil, progress: nil, success: { (task: URLSessionDataTask, response:Any?) -> Void in
+        get("1.1/statuses/home_timeline.json", parameters: nil, progress: nil, success: { (task: URLSessionDataTask, response:Any?) in
             let dictionaries = response as! [NSDictionary]
             
             let tweets = Tweet.tweetsWithArray(dictionaries: dictionaries)
@@ -28,7 +28,7 @@ class TwitterClient: BDBOAuth1SessionManager {
             success(tweets)
             
         }, failure: {
-            (task: URLSessionDataTask?, error: Error) -> Void in
+            (task: URLSessionDataTask?, error: Error) in
             failure(error as NSError)
         })
         
@@ -95,10 +95,7 @@ class TwitterClient: BDBOAuth1SessionManager {
         User.currentUser = nil
         deauthorize()
         
-        
-        NotificationCenter.default.post(name: NSNotification.Name(User.userDidLogoutNotification), object: nil)
-        //
-        //        NotificationCenter.default().postNotification(User.userDidLogoutNotification, object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: User.userDidLogoutNotification), object: nil)
     }
     
     
@@ -106,18 +103,18 @@ class TwitterClient: BDBOAuth1SessionManager {
         
         let requestToken = BDBOAuth1Credential(queryString: url.query)
         
-        fetchAccessToken(withPath: "oauth/access_token", method: "POST", requestToken: requestToken, success: {(accessToken: BDBOAuth1Credential? ) -> Void in
+        fetchAccessToken(withPath: "oauth/access_token", method: "POST", requestToken: requestToken, success: {(accessToken: BDBOAuth1Credential? ) in
             
             self.currentAccount(success: { (user: User) -> () in
                 User.currentUser = user
                 self.loginSuccess?()
                 
-            }, failure: { (error)  -> () in
-                self.loginFailure?(error as NSError)
+            }, failure: { (error: NSError)  -> () in
+                self.loginFailure?(error)
             })
+            self.loginSuccess?()
             
-            
-        }, failure: {(error: Error?) -> Void in
+        }, failure: {(error) in
             print(error?.localizedDescription)
             self.loginFailure?(error as! NSError)
         })
