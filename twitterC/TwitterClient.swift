@@ -56,30 +56,39 @@ class TwitterClient: BDBOAuth1SessionManager {
         
     }
     
-    func login(success: @escaping () -> (), failure: @escaping (Error) -> () ){
+    func login(success: @escaping () -> (), failure: @escaping (NSError) -> () ){
         loginSuccess = success
         loginFailure = failure
         
-        
-        TwitterClient.sharedInstance?.deauthorize()
-        
+        deauthorize()
+//        TwitterClient.sharedInstance?.deauthorize()
+        fetchRequestToken(withPath: "oauth/request_token", method: "GET", callbackURL: NSURL(string: "twitterdemo://oauth") as URL!, scope: nil, success: { (requestToken: BDBOAuth1Credential?) in
+            
         //register extensions
-        TwitterClient.sharedInstance?.fetchRequestToken(withPath: "oauth/request_token", method: "GET", callbackURL: URL(string: "twitterdemo://oauth"), scope: nil, success: { (requestToken: BDBOAuth1Credential?) -> Void in
+//        TwitterClient.sharedInstance?.fetchRequestToken(withPath: "oauth/request_token", method: "GET", callbackURL: URL(string: "twitterC://oauth"), scope: nil, success: { (requestToken: BDBOAuth1Credential?) in
+        
+            
+            
             
             print("got a token!")
             
             //youtube 14:30
-            let url = URL(string: "https://api.twitter.com/oauth/authorize?oauth_token=\(requestToken!.token!)")
+            if requestToken != nil {
+                let url = NSURL(string: "https://api.twitter.com/oauth/authorize?oauth_token=\((requestToken?.token)!)")!
+                UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
+            
+            }
+//            let url = URL(string: "https://api.twitter.com/oauth/authorize?oauth_token=\(requestToken!.token!)")
             
             //open allow you to switch out of application to something else. this includes safari, maps, etc. if its http -> safari
-            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+//            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
             
-        }) {(Error: Error?) -> Void in
-            print("error: \(Error!.localizedDescription)")
-            self.loginFailure?(Error as! NSError)
-        }
+        }, failure: {(error) in
+            print("error: \(error?.localizedDescription)")
+            self.loginFailure?(error as! NSError)
+        })
         
-        
+    
     }
     
     func logout(){
