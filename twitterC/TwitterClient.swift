@@ -90,8 +90,9 @@ class TwitterClient: BDBOAuth1SessionManager {
     }
     
     func logout(){
-        User.currentUser = nil
         deauthorize()
+        User.currentUser = nil
+        
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: User.userDidLogoutNotification), object: nil)
     }

@@ -44,6 +44,15 @@ class TweetCell: UITableViewCell {
             rCount.text = "\(tweet.retweets_count)"
             lCount.text = "\(tweet.favoritesCount)"
             timeStamp.text = "\(tweet.timestamp)"
+            
+            if let imageURL = tweet.user?.profileUrl {
+                
+                profilephoto.setImageWith(imageURL)
+            
+            }
+                
+            
+            
         
         }
     }
