@@ -148,7 +148,7 @@
                                             <outlet property="lCount" destination="xsi-4D-6ou" id="1Mx-QQ-Nfe"/>
                                             <outlet property="likeButtonOutlet" destination="UYW-R4-f1b" id="FSr-OR-VDa"/>
                                             <outlet property="nameLabel" destination="2zZ-Dp-Uv9" id="9lX-7V-UBb"/>
-                                            <outlet property="profilephoto" destination="eW7-JB-oee" id="rnQ-kb-BAo"/>
+                                            <outlet property="profilephoto" destination="eW7-JB-oee" id="dZI-vf-oAj"/>
                                             <outlet property="rCount" destination="aL2-y9-9uK" id="dXX-o1-bMO"/>
                                             <outlet property="retweetButtonOutlet" destination="9AR-AP-6Re" id="WSG-Zi-JFd"/>
                                             <outlet property="timeStamp" destination="hKa-FI-EKx" id="ZV4-9h-s0a"/>

@@ -9,8 +9,9 @@
 import UIKit
 
 class TweetCell: UITableViewCell {
-
+    
     @IBOutlet weak var profilephoto: UIImageView!
+    
     @IBOutlet weak var rCount: UILabel!
     @IBOutlet weak var lCount: UILabel!
     @IBOutlet weak var tweetLabel: UILabel!
@@ -27,6 +28,7 @@ class TweetCell: UITableViewCell {
     var retweeted = false
     var favorited = false
     
+    
 //    var user: User! {
 //        didSet{
 //            profilephoto.setImageWith(user.profileUrl!)
@@ -36,7 +38,7 @@ class TweetCell: UITableViewCell {
 //        
 //        }
 //    }
-    
+//    
     var tweet: Tweet! {
         
         didSet{
@@ -44,13 +46,14 @@ class TweetCell: UITableViewCell {
             rCount.text = "\(tweet.retweets_count)"
             lCount.text = "\(tweet.favoritesCount)"
             timeStamp.text = "\(tweet.timestamp)"
+
             
             if let imageURL = tweet.user?.profileUrl {
                 
                 profilephoto.setImageWith(imageURL)
             
             }
-                
+            
             
             
         

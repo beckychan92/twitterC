@@ -22,7 +22,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("in twttier cntrl")
+        print("in twitter cntrl")
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
