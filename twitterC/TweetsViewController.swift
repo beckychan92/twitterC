@@ -16,10 +16,9 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView: UITableView!
     
     
-    @IBAction func onLogoutButton(_ sender: Any) {
-        TwitterClient.sharedInstance?.logout()
+    @IBAction func logoutButton(_ sender: Any) {
+        TwitterClient.sharedInstance!.logout()
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

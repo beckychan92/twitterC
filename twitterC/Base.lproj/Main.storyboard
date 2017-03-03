@@ -166,6 +166,9 @@
                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButton:" destination="91m-xU-H2N" eventType="touchUpInside" id="z7A-Z5-nSd"/>
+                                </connections>
                             </button>
                             <connections>
                                 <action selector="onLogoutButton:" destination="91m-xU-H2N" id="gXK-g0-VFz"/>
