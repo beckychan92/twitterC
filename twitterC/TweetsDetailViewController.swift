@@ -27,7 +27,7 @@ class TweetsDetailViewController: UIViewController {
         
         self.navigationItem.title = "Tweet"
         //profile pix
-        tweetLabel.text = tweet.description
+//        tweetLabel.text = tweet.description
         
         
         //username tweet
@@ -42,11 +42,36 @@ class TweetsDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+      
+    var retweeted = false
+    var favorite = false
     
     @IBAction func onReTweet(_ sender: Any) {
+        if retweeted == false {
+            retweetButton.setImage(UIImage (named: "retweet_icon_blue"), for: UIControlState.normal)
+            retweetCount.text = "\(Int(retweetCount.text!)! + 1)"
+            retweeted = true
+        } else {
+            retweetButton.setImage(UIImage(named: "retweet_icon"), for: UIControlState.normal)
+            retweetCount.text = "\(Int(retweetCount.text!)! - 1)"
+            retweeted = false
+        
+        }
     }
     
+    
+    
     @IBAction func onLike(_ sender: Any) {
+        if favorite == false{
+            likeButton.setImage(UIImage (named: "like_icon_blue"), for: UIControlState.normal)
+            likeCount.text = "\(Int(likeCount.text!)! + 1)"
+            favorite = true
+        } else {
+            likeButton.setImage(UIImage (named: "like_icon"), for: UIControlState.normal)
+            likeCount.text = "\(Int(likeCount.text!)! - 1)"
+            favorite = false
+        
+        }
     }
     
     
