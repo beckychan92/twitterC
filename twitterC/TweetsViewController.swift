@@ -60,9 +60,18 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     // In a storyboard-based application, you will often want to do a little preparation before navigation
  */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("segue called")
 //         Get the new view controller using segue.destinationViewController.
 //         Pass the selected object to the new view controller.
+        if let sender = sender as? TweetCell{
+            print("segue called on TweetCell")
+
+            let indexPath = tableView.indexPath(for: sender)
+            // Get in touch with the DetailViewController
+            let vc = segue.destination as! TweetsDetailViewController
+            // Pass on the data to the Detail ViewController by setting it's indexPathRow value
+            let cell = self.tableView(self.tableView, cellForRowAt: indexPath!) as! TweetCell
+            vc.tweet = cell.tweet
+        }
     }
  
 

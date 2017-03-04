@@ -11,7 +11,7 @@ The following **required** functionality is completed:
 - [X] User can sign in using OAuth login flow
 - [X] User can view last 20 tweets from their home timeline
 - [X] The current signed in user will be persisted across restarts
-- [ ] In the home timeline, user can view tweet with the user profile picture, username, tweet text, and timestamp.
+- [x] In the home timeline, user can view tweet with the user profile picture, username, tweet text, and timestamp.
 - [X] Retweeting and favoriting should increment the retweet and favorite count.
 
 The following **optional** features are implemented:
@@ -66,7 +66,7 @@ Describe any challenges encountered while building the app.
 
   The following **required** functionality is completed:
 
-  - [0.5] Tweet Details Page: User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
+  - [X] Tweet Details Page: User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
   - [ ] Profile page:
      - [ ] Contains the user header view
      - [ ] Contains a section with the users basic stats: # tweets, # following, # followers

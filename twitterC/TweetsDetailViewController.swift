@@ -20,22 +20,25 @@ class TweetsDetailViewController: UIViewController {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var likeCount: UILabel!
     
-    var tweet: NSDictionary!
+    var tweet: Tweet!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.title = "Tweet"
-        //profile pix
-//        tweetLabel.text = tweet.description
+        tweetLabel.text = tweet.text!
+        retweetCount.text = "\(tweet.retweets_count)"
+        likeCount.text = "\(tweet.favoritesCount)"
+        timeStamp.text = "\(tweet.timestamp)!"
         
         
-        //username tweet
-
-        
-        //timestamp
-//        timeStamp.text = Twe
-        
+        if let imageURL = tweet.user?.profileUrl {
+            
+            profilepix.setImageWith(imageURL)
+            
+        }
         
         
 
