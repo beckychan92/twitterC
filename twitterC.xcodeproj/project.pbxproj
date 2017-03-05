@@ -23,6 +23,7 @@
 		C5E153391E63E4A900581D9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E153381E63E4A900581D9D /* User.swift */; };
 		C5E1533B1E63E88400581D9D /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1533A1E63E88400581D9D /* Tweet.swift */; };
 		C5E1533D1E63EB0800581D9D /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1533C1E63EB0800581D9D /* TweetCell.swift */; };
+		C5FA125B1E6B863E00445B20 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA125A1E6B863E00445B20 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		C5E153381E63E4A900581D9D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C5E1533A1E63E88400581D9D /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		C5E1533C1E63EB0800581D9D /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
+		C5FA125A1E6B863E00445B20 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CA2C180556BAF70634AE0E83 /* Pods_twitterCTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_twitterCTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -202,6 +204,7 @@
 				C5E153341E63DC9C00581D9D /* LoginViewController.swift */,
 				C5E153361E63E06700581D9D /* TweetsViewController.swift */,
 				C5900A2E1E69093000F5C830 /* TweetsDetailViewController.swift */,
+				C5FA125A1E6B863E00445B20 /* ProfileViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				C5E153351E63DC9C00581D9D /* LoginViewController.swift in Sources */,
 				C5E152FF1E63CF4D00581D9D /* AppDelegate.swift in Sources */,
 				C5E1533B1E63E88400581D9D /* Tweet.swift in Sources */,
+				C5FA125B1E6B863E00445B20 /* ProfileViewController.swift in Sources */,
 				C5E153391E63E4A900581D9D /* User.swift in Sources */,
 				C5E153331E63D5A000581D9D /* TwitterClient.swift in Sources */,
 			);

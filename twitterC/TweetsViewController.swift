@@ -71,8 +71,17 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             // Pass on the data to the Detail ViewController by setting it's indexPathRow value
             let cell = self.tableView(self.tableView, cellForRowAt: indexPath!) as! TweetCell
             vc.tweet = cell.tweet
+        }else {
+            //Clicked on profile img
+            let vc = segue.destination as! ProfileViewController
+            let button = sender as! UIButton
+            let view = button.superview!
+            let cell = view.superview as! TweetCell
+            
+            let indexPath = tableView.indexPath(for: cell)
+            let tweet = tweets[(indexPath?.row)!]
+            vc.tweet = tweet
         }
-    }
  
-
+    }
 }

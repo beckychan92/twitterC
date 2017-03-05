@@ -53,6 +53,9 @@ class TweetCell: UITableViewCell {
                 profilephoto.setImageWith(imageURL)
             
             }
+            if let screename = tweet.user?.screenname{
+                nameLabel.text = "\(screename)"
+            }
             
             
             
@@ -60,22 +63,21 @@ class TweetCell: UITableViewCell {
         }
     }
     
-    
-    @IBAction func retweetButton(_ sender: Any) {
-        if retweeted == false {
-            retweetButtonOutlet.setImage(UIImage (named: "retweet_icon_blue"), for: UIControlState.normal)
-            rCount.text = "\(Int(rCount.text!)! + 1)"
-            retweeted = true
-        } else {
-            retweetButtonOutlet.setImage(UIImage (named: "retweet_icon"), for: UIControlState.normal)
-            rCount.text = "\(Int(rCount.text!)! - 1)"
-            retweeted = false
-        }
+    @IBAction func onRetweetButton(_ sender: Any) {
+            if retweeted == false {
+                retweetButtonOutlet.setImage(UIImage (named: "retweet_icon_blue"), for: UIControlState.normal)
+                rCount.text = "\(Int(rCount.text!)! + 1)"
+                retweeted = true
+            } else {
+                retweetButtonOutlet.setImage(UIImage (named: "retweet_icon"), for: UIControlState.normal)
+                rCount.text = "\(Int(rCount.text!)! - 1)"
+                retweeted = false
+            }
     }
     
-    
-    
-    @IBAction func likeButton(_ sender: Any) {
+
+    @IBAction func onLikeButton(_ sender: Any) {
+        
         if favorited == false {
             likeButtonOutlet.setImage(UIImage (named: "like_icon_blue"), for: UIControlState.normal)
             lCount.text = "\(Int(lCount.text!)! + 1)"
@@ -85,7 +87,11 @@ class TweetCell: UITableViewCell {
             lCount.text = "\(Int(lCount.text!)! - 1)"
             favorited = false
         }
+
     }
+    
+    
+
     
     
     
