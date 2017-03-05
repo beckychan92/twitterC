@@ -11,6 +11,7 @@
 		675D7210D298DDD2CA5D6F8F /* Pods_twitterC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4B6650B64E69659468AA0A /* Pods_twitterC.framework */; };
 		7DB7E163F2185202FBC71AC5 /* Pods_twitterCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2C180556BAF70634AE0E83 /* Pods_twitterCTests.framework */; };
 		C5900A2F1E69093000F5C830 /* TweetsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5900A2E1E69093000F5C830 /* TweetsDetailViewController.swift */; };
+		C5DCB5D01E6BFB78008770B1 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DCB5CF1E6BFB78008770B1 /* ComposeViewController.swift */; };
 		C5E152FF1E63CF4D00581D9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E152FE1E63CF4D00581D9D /* AppDelegate.swift */; };
 		C5E153041E63CF4D00581D9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5E153021E63CF4D00581D9D /* Main.storyboard */; };
 		C5E153061E63CF4D00581D9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5E153051E63CF4D00581D9D /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		7A4B6650B64E69659468AA0A /* Pods_twitterC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_twitterC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E9F22D0E04FCC907A34CC5 /* Pods-twitterC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitterC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitterC/Pods-twitterC.debug.xcconfig"; sourceTree = "<group>"; };
 		C5900A2E1E69093000F5C830 /* TweetsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsDetailViewController.swift; sourceTree = "<group>"; };
+		C5DCB5CF1E6BFB78008770B1 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		C5E152FB1E63CF4D00581D9D /* twitterC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitterC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5E152FE1E63CF4D00581D9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5E153031E63CF4D00581D9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				C5E153361E63E06700581D9D /* TweetsViewController.swift */,
 				C5900A2E1E69093000F5C830 /* TweetsDetailViewController.swift */,
 				C5FA125A1E6B863E00445B20 /* ProfileViewController.swift */,
+				C5DCB5CF1E6BFB78008770B1 /* ComposeViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 					C5E152FA1E63CF4D00581D9D = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 4S57G43G7F;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					C5E1530E1E63CF4D00581D9D = {
@@ -505,6 +509,7 @@
 				C5900A2F1E69093000F5C830 /* TweetsDetailViewController.swift in Sources */,
 				C5E153351E63DC9C00581D9D /* LoginViewController.swift in Sources */,
 				C5E152FF1E63CF4D00581D9D /* AppDelegate.swift in Sources */,
+				C5DCB5D01E6BFB78008770B1 /* ComposeViewController.swift in Sources */,
 				C5E1533B1E63E88400581D9D /* Tweet.swift in Sources */,
 				C5FA125B1E6B863E00445B20 /* ProfileViewController.swift in Sources */,
 				C5E153391E63E4A900581D9D /* User.swift in Sources */,
@@ -661,6 +666,7 @@
 			baseConfigurationReference = B9E9F22D0E04FCC907A34CC5 /* Pods-twitterC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4S57G43G7F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -673,6 +679,7 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = codepath.com.twitterC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -682,6 +689,7 @@
 			baseConfigurationReference = 639751296A985C8A2F5B7EB1 /* Pods-twitterC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4S57G43G7F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
