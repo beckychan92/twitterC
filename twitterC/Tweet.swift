@@ -28,7 +28,9 @@ class Tweet: NSObject {
             let formatter = DateFormatter()
             formatter.dateFormat = "EEE MMM d HH: mm:ss Z y"
             
-            timestamp = formatter.date(from: timestampString) as Date?
+            timestamp = formatter.date(from: timestampString) as Date!
+
+            
         }
         
     }

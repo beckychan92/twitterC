@@ -32,6 +32,7 @@ class TweetsDetailViewController: UIViewController {
         retweetCount.text = "\(tweet.retweets_count)"
         likeCount.text = "\(tweet.favoritesCount)"
         timeStamp.text = "\(tweet.timestamp)!"
+        userName.text = "\(tweet.user!.screenname!)"
         
         
         if let imageURL = tweet.user?.profileUrl {

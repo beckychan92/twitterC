@@ -9,7 +9,6 @@
 import UIKit
 
 class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-    //, UITableViewDelegate, UITableViewDataSource
     
     var tweets: [Tweet] = []
     
