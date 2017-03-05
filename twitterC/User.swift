@@ -71,4 +71,26 @@ class User: NSObject {
             }
         }
     }
+    
+    func getFollower() -> String{
+        if let followers = self.followers{
+            return String(describing: followers)
+        }else{
+            return "0"
+        }
+    }
+    func getFollowing() -> String{
+        if let following = self.following{
+            return String(describing: following)
+        }else{
+            return "0"
+        }
+    }
+    func getStatusCount() -> String{
+        if let tweetCount = self.tweetCount{
+            return String(describing: tweetCount)
+        }else{
+            return "0"
+        }
+    }
 }

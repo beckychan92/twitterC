@@ -56,6 +56,11 @@ class ProfileViewController: UIViewController {
             userName.text = "\(username)"
         }
         
+        FollowersCount.text = user.getFollower()
+        FollowingCount.text = user.getFollowing()
+        tweetCount.text = user.getStatusCount()
+        
+        
 
         // Do any additional setup after loading the view.
     }
