@@ -10,10 +10,19 @@ import UIKit
 
 class ComposeViewController: UIViewController {
 
+    @IBOutlet weak var profilePhoto: UIImageView! //
+    @IBOutlet weak var userName: UILabel! //
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var tweetButton: UIButton!
+    
+    var tweet: Tweet?
+    var user: User!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+//        userName.text = user?.screenname
+//        profilePhoto.setImageWith((user?.profileUrl) as URL)
+        
     }
 
     override func didReceiveMemoryWarning() {

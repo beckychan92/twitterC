@@ -91,9 +91,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1B6-Bm-Wcl">
+                                <rect key="frame" x="303" y="210" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Tweet"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="profilePhoto" destination="0mj-Cp-QFz" id="aSL-C1-Dqj"/>
+                        <outlet property="textField" destination="BI7-dg-a6e" id="QxB-fC-BU2"/>
+                        <outlet property="tweetButton" destination="1B6-Bm-Wcl" id="YPy-d1-PyE"/>
+                        <outlet property="userName" destination="sdo-G1-s6a" id="6Bk-lE-kID"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ikr-4g-LHI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
