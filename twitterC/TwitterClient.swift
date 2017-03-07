@@ -35,6 +35,37 @@ class TwitterClient: BDBOAuth1SessionManager {
         
     }
     
+    //func from Robert H
+    func compose(params: NSDictionary?, success: @escaping () -> (), failure: @escaping (Error) -> ()  ){
+        let param = params as! [String : String]
+        print("this is the param")
+        print(param)
+        
+        post("1.1/statuses/update.json", parameters: param, progress: nil,  success: { (operation: URLSessionDataTask!, response: Any?) -> Void in
+            print("tweeting!")
+            success()
+        }, failure: { (operation: URLSessionDataTask?, error: Error?) -> Void in
+            print("Couldn't compose")
+            failure(error!)
+        }
+        )
+    }
+    
+    //func from Robert H
+    func reply(params: NSDictionary?, success: @escaping () -> (), failure: @escaping (Error) -> ()  ){
+        let param = params as! [String : Any]
+        print("this is the param")
+        print(param)
+        
+        post("1.1/statuses/update.json", parameters: param, progress: nil, success: { (operation: URLSessionDataTask!, response: Any?) -> Void in
+            print("reply!")
+            success()
+        }, failure: { (operation: URLSessionDataTask?, error: Error?) -> Void in
+            print("Couldn't reply")
+            failure(error!)
+        })
+    }
+    
     //current user
     func currentAccount(success: @escaping (User) -> (), failure: @escaping (NSError) -> () ){
         get("1.1/account/verify_credentials.json", parameters: nil, progress: nil, success:{ (task: URLSessionDataTask, response: Any?) in

@@ -96,6 +96,9 @@
                                 <rect key="frame" x="303" y="210" width="42" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Tweet"/>
+                                <connections>
+                                    <action selector="onTweet:" destination="2zF-Sz-4qR" eventType="touchUpInside" id="rBe-0S-OVs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

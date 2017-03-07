@@ -23,6 +23,8 @@ class ComposeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //populate username and profile pix
         userName.text = user?.screenname
         profilePhoto.setImageWith((user?.profileUrl)! as URL)
         
@@ -39,6 +41,33 @@ class ComposeViewController: UIViewController {
         performSegue(withIdentifier: "TweetsViewController", sender: self)
         
     }
+    
+    
+    @IBAction func onTweet(_ sender: Any) {
+        let tweetMessage = textField.text
+        
+        if (user == User.currentUser) {
+            TwitterClient.sharedInstance?.compose(params: ["status": tweetMessage], success: {
+                () in
+                print("working")
+            }, failure: { (error: Error) in
+                print("error")
+            })
+        
+        } else {
+            TwitterClient.sharedInstance?.reply(params: ["status": tweetMessage], success: { 
+                () in
+                print("working")
+            }, failure: { (error: Error) in
+                print("error")
+            })
+        
+        }
+        
+    }
+    
+    
+    
     
 
     /*
