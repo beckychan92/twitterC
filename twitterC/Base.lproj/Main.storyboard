@@ -254,6 +254,11 @@
                                 <action selector="onLogoutButton:" destination="91m-xU-H2N" id="gXK-g0-VFz"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="compose" id="zeX-Ib-FCr">
+                            <connections>
+                                <segue destination="2zF-Sz-4qR" kind="presentation" id="Zai-ZL-AQM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Xqx-Zz-6nh" id="qhU-Eh-Bxp"/>
@@ -276,20 +281,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="inr-iA-ZwS">
-                                <rect key="frame" x="8" y="28" width="100" height="100"/>
+                                <rect key="frame" x="8" y="72" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="1mu-Rh-5fO"/>
                                     <constraint firstAttribute="width" constant="100" id="BcS-kw-RTf"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPu-Yd-m6e">
-                                <rect key="frame" x="116" y="28" width="49" height="12"/>
+                                <rect key="frame" x="116" y="72" width="49" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8l-gb-SeR">
-                                <rect key="frame" x="24" y="136" width="343" height="100"/>
+                                <rect key="frame" x="24" y="180" width="343" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="3n7-aK-6Sx"/>
                                 </constraints>
@@ -304,7 +309,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTS-iA-a0S">
-                                <rect key="frame" x="43" y="247" width="30" height="171"/>
+                                <rect key="frame" x="43" y="291" width="30" height="83"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="7"/>
                                 <state key="normal" title="retweet"/>
                                 <connections>
@@ -312,19 +317,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lCount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enK-Ur-E0X">
-                                <rect key="frame" x="199" y="282" width="23" height="9"/>
+                                <rect key="frame" x="199" y="326" width="23" height="9"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="7"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8B-cd-x13">
-                                <rect key="frame" x="346" y="28" width="21" height="11"/>
+                                <rect key="frame" x="346" y="72" width="21" height="11"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFg-fR-wQg">
-                                <rect key="frame" x="149" y="276" width="30" height="21"/>
+                                <rect key="frame" x="149" y="320" width="30" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="7"/>
                                 <state key="normal" title="like"/>
                                 <connections>
@@ -460,16 +465,6 @@
                                                 <segue destination="91m-xU-H2N" kind="presentation" id="BM4-jN-0D5"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="TyE-SN-IPd">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="djk-lf-s7o">
-                                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Compose"/>
-                                                <connections>
-                                                    <segue destination="2zF-Sz-4qR" kind="presentation" id="kcu-JO-Nnn"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -508,6 +503,9 @@
             <point key="canvasLocation" x="829.60000000000002" y="999.85007496251887"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="compose" width="15" height="15"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YJo-19-hlj"/>
     </inferredMetricsTieBreakers>

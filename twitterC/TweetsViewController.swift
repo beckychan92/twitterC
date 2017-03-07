@@ -19,6 +19,9 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         TwitterClient.sharedInstance!.logout()
     }
     
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("in twitter cntrl")
@@ -67,10 +70,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             let cell = self.tableView(self.tableView, cellForRowAt: indexPath!) as! TweetCell
             vc.tweet = cell.tweet
         }else if let sender = sender as? UIBarButtonItem{
-            if sender.image! == UIImage(named: "user")!{
-                let vc = segue.destination as! ProfileViewController
-                vc.user = User.currentUser!
-            }else{
+            if sender.image! == UIImage(named: "compose")!{
                 let vc = segue.destination as! ComposeViewController
                 vc.user = User.currentUser!
             }
