@@ -73,8 +73,12 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             if sender.image! == UIImage(named: "compose")!{
                 let vc = segue.destination as! ComposeViewController
                 vc.user = User.currentUser!
+            } else {
+                _ = segue.identifier as! TweetsViewController
             }
-        }else {
+    
+            
+        } else {
             let vc = segue.destination as! ProfileViewController
             let button = sender as! UIButton
             let view = button.superview!

@@ -14,20 +14,30 @@ class ComposeViewController: UIViewController {
     @IBOutlet weak var userName: UILabel! //
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tweetButton: UIButton!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     var tweet: Tweet?
     var user: User!
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        userName.text = user?.screenname
-//        profilePhoto.setImageWith((user?.profileUrl) as URL)
+        userName.text = user?.screenname
+        profilePhoto.setImageWith((user?.profileUrl)! as URL)
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func oncancelButton(_ sender: Any) {
+        print("cancel func works!")
+        performSegue(withIdentifier: "TweetsViewController", sender: self)
+        
     }
     
 
