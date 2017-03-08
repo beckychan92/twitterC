@@ -60,7 +60,7 @@ Describe any challenges encountered while building the app.
 
 # Project 5 - *TwitterC*
 
-Time spent: **X** hours spent in total
+Time spent: **25** hours spent in total
 
 ## User Stories
 
@@ -71,7 +71,7 @@ The following **required** functionality is completed:
    - [X] Contains the user header view
    - [X] Contains a section with the users basic stats: # tweets, # following, # followers
 - [X] Home Timeline: Tapping on a user image should bring up that user's profile page
-- [0.5] Compose Page: User can compose a new tweet by tapping on a compose button.
+- [X] Compose Page: User can compose a new tweet by tapping on a compose button.
 
 The following **optional** features are implemented:
 
@@ -101,6 +101,9 @@ Please list two areas of the assignment you'd like to **discuss further with you
 Here's a walkthrough of implemented user stories:
 
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/NO1CJ"><a href="//imgur.com/NO1CJ"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
 
 GIF created with [Record It](http://www.recordit.co).
 
