@@ -35,6 +35,8 @@ Here's a walkthrough of implemented user stories:
 
 <a href="http://imgur.com/vp2H9Zt"><img src="http://i.imgur.com/vp2H9Zt.gif" title="source: imgur.com" /></a>
 
+<a href="http://imgur.com/VT9xn2p"><img src="http://i.imgur.com/VT9xn2p.gif" title="source: imgur.com" /></a>
+
 GIF created with [Record It](http://www.recordit.co).
 
 ## Notes
